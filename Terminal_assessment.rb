@@ -44,28 +44,28 @@ loop do
         name = gets.chomp.capitalize
         employee_roster = get_roster(name,employee_hours)
         
-        puts "Which day would you like to make changes to"
+        puts "Which day would you like to make changes to?"# Finds the day and returns the index of the required input
         day = gets.chomp.capitalize 
         day_array = table_headers.index(day)
         
         loop do
-            puts "Is #{name} working on #{day}? y/n"
+            puts "Is #{name} working on #{day}? y/n" #If y then input is required to edit the roster n will default to n/a
             employee_roster.delete_at(0)
             employee_roster.insert(0, name)
             day_working = gets.chomp.downcase
             if day_working == "y"
-                puts "What time do they start?"
+                puts "What time do they start?"     #Start time of shift for that day
                 time_start = gets.chomp
-                puts "What time do they finish?"
+                puts "What time do they finish?"    #End time of shift for that day
                 time_end = gets.chomp
                 employee_roster.delete_at(day_array)
                 employee_roster.insert(day_array, "#{time_start} - #{time_end}")
                 break
             elsif day_working == "n"
-                employee_hours.insert(day_array, "n/a")
+                employee_hours.insert(day_array, "n/a")  #the default for unnassigned spaces in roster
                 break               
             else 
-                puts "Invalid selection"
+                puts "Invalid selection"   #If the user tries to go off the rails
             end        
         end
         
@@ -81,10 +81,10 @@ loop do
         puts table.render(:ascii)
         continue
 
-    when "Remove", "R"
-        puts "What is the name of the employee you are removing?"
-        name_remove = get_roster((gets.chomp.capitalize), employee_hours)
-        name_remove.delete
+    # when "Remove", "R"
+    #     puts "What is the name of the employee you are removing?"
+    #     name_remove = get_roster((gets.chomp.capitalize), employee_hours)
+    #     name_remove.delete
         
     when "Quit", "Q"                        # Quits out of the application
         continue
