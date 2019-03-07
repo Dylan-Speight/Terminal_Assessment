@@ -20,9 +20,9 @@ To assist managers/employers with creating a weekly roster for their small busin
 7. Enter the employee's ending time
 8. Program stores the information and loops back to begin again.
 
-https://ibb.co/2S5Ltds
-https://ibb.co/dpXQC3c
-https://ibb.co/N2z0Cpy
+1. https://ibb.co/2S5Ltds
+2. https://ibb.co/dpXQC3c
+3. https://ibb.co/N2z0Cpy
 
 #H3 Trello
 https://ibb.co/4YjQphV
